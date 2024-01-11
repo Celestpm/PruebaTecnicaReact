@@ -1,38 +1,73 @@
+/* src/App.css */
+
 .App {
+  position: relative;
+  min-height: 100vh;
+  background-color: #030328;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title{
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  width: 600px;
+  height: 110px;
+  display: flex;
+  overflow: hidden;
+  background: rgb(60, 62, 68);
+  margin: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  border-style: solid;
+    border-image: linear-gradient( 1turn, rgba(116, 9, 121, 1), rgba(185, 8, 246, 1), rgba(91, 28, 230, 1) ) 1 / 3px;
+}
+
+.imgdiv {
+  flex: 2 1 0%;
+  width: 100%;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 16px;
+}
+
+.card-info {
+  flex: 3 1 0%;
+  position: relative;
+  padding: 0.75rem;
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+@media (min-width: 768px) {
+  .card {
+    width: calc(25% - 32px);
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.load-more-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.load-more-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
